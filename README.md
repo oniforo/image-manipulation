@@ -1,7 +1,7 @@
 # image-manipulation
 
-[![Pylint](https://github.com/oniforo/image-manipulation/actions/workflows/pylint.yml/badge.svg)](https://github.com/oniforo/image-manipulation/actions/workflows/pylint.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/oniforo/image-manipulation/pylint.yml?style=flat-square)](https://github.com/oniforo/image-manipulation/actions/workflows/pylint.yml)
+[![License](https://img.shields.io/github/license/oniforo/image-manipulation?style=flat-square)](LICENSE)
 
 A small Python script that batch-processes images: crops each one to a
 square (padding with white where needed) and generates a thumbnail.
