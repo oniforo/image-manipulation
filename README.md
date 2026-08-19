@@ -1,5 +1,8 @@
 # image-manipulation
 
+[![Pylint](https://github.com/oniforo/image-manipulation/actions/workflows/pylint.yml/badge.svg)](https://github.com/oniforo/image-manipulation/actions/workflows/pylint.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A small Python script that batch-processes images: crops each one to a
 square (padding with white where needed) and generates a thumbnail.
 
@@ -16,7 +19,7 @@ square (padding with white where needed) and generates a thumbnail.
 
 ## Requirements
 
-- Python 3.10+
+- Python 3.8+ (tested on 3.8, 3.9, and 3.10 in CI)
 - [Pillow](https://python-pillow.org/) 9.1.0
 
 ## Setup
@@ -24,7 +27,7 @@ square (padding with white where needed) and generates a thumbnail.
 ```bash
 python -m venv venv
 venv\Scripts\activate   # on Windows
-pip install Pillow
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -46,4 +49,17 @@ resized/      # images padded to a square canvas
 thumbnails/   # 300x300 thumbnails generated from resized/
 main.py       # entry point
 manipulate.py # Manipulate class: resize_to_square, create_thumbnail
+requirements.txt          # pinned runtime dependencies
+.github/workflows/pylint.yml # CI: lints every push with pylint
+```
+
+## Continuous integration
+
+Every push is linted with [pylint](https://pylint.readthedocs.io/) on
+Python 3.8, 3.9, and 3.10 via GitHub Actions
+(`.github/workflows/pylint.yml`). Run it locally before pushing with:
+
+```bash
+pip install pylint
+pylint main.py manipulate.py
 ```
