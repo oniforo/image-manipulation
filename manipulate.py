@@ -1,12 +1,17 @@
-from PIL import Image
+"""Square-crop images and generate thumbnails from them."""
 import os
 
+from PIL import Image
+
+
 class Manipulate:
+    """Resizes a single image to a square canvas and thumbnails it."""
 
     def __init__(self, filename):
         self.filename = filename
 
     def resize_to_square(self):
+        """Pad the image onto a white square canvas and save it to resized/."""
 
         img = Image.open(f'images/{self.filename}')
         img_w, img_h = img.size
@@ -25,7 +30,7 @@ class Manipulate:
         bg.save(f'resized/{self.filename}')
 
     def create_thumbnail(self, size):
-
+        """Save a size x size thumbnail to thumbnails/, resizing first if needed."""
         file_path = f'resized/{self.filename}'
         new_size = size, size
 
